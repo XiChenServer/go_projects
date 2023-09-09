@@ -6,7 +6,7 @@ mysql:
   password: 123456789zwm
   log_level: dev
 logger:
-  lever: info
+  level: info
   prefix: '[gvb]'
   director: log
   show_line: true
