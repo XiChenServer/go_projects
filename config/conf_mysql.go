@@ -1,10 +1,17 @@
 package config
 
+import "strconv"
+
 type Mysql struct {
 	Host     string `yaml:"host"`
-	Post     int    `yaml:"post"`
+	Port     int    `yaml:"port"`
+	Config   string `yaml:"config"`
 	DB       string `yaml:"db"`
-	user     string `yaml:"user"`
+	User     string `yaml:"user"`
 	Password string `yaml:"password"`
-	LogLever string `yaml:"log_lever"`
+	LogLevel string `yaml:"log_level"`
+}
+
+func (m *Mysql) Dsn() string {
+	return m.User + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.DB + "?" + m.Config
 }

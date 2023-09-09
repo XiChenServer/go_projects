@@ -4,14 +4,15 @@ mysql:
   db: gvb_db
   user: root
   password: 123456789zwm
-  log_lever: dev
-system:
-  host: "0.0.0.0"
-  port: 8080
-  env: dev
+  log_level: dev
 logger:
   lever: info
   prefix: '[gvb]'
   director: log
   show_line: true
   log_in_console: true
+system:
+  host: "0.0.0.0"
+  port: 8080
+  env: dev
+
