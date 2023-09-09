@@ -1,6 +1,6 @@
 package models
 
-type AdverModel struct {
+type AdvertModel struct {
 	MODEL
 	Title  string `gorm:size:32 json:"title"`
 	Href   string `json:"href"`
