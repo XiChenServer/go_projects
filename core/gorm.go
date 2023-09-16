@@ -22,6 +22,7 @@ func InitGorm() *gorm.DB {
 	} else {
 		mysqlLogger = logger.Default.LogMode(logger.Error)
 	}
+	global.MysqlLog = logger.Default.LogMode(logger.Info)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: mysqlLogger,
 	})

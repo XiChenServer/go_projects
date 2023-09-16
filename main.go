@@ -16,7 +16,9 @@ func main() {
 		flag.SwitchOption(option)
 		return
 	}
+
 	router := routers.InitRouter()
+
 	err := router.Run(global.Config.System.Addr())
 	if err != nil {
 		global.Log.Fatalf(err.Error())

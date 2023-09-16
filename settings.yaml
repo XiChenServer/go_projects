@@ -1,12 +1,13 @@
 mysql:
   host: 127.0.0.1
   port: 3306
+  config: "charset=utf8mb4&parseTime=True&loc=Local"
   db: gvb_db
   user: root
   password: 123456789zwm
   log_level: dev
 logger:
-  level: info
+  lever: info
   prefix: '[gvb]'
   director: log
   show_line: true
@@ -15,4 +16,47 @@ system:
   host: "0.0.0.0"
   port: 8080
   env: release
-
+upload:
+  size: 2
+  path: uploads/file
+site-info:
+  created_at: "2023-09-08"
+  bei_an: 甘fgfhh
+  title: 少年的个人博客
+  qq_image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.runoob.com%2Fcss%2Fcss-image-gallery.html&psig=AOvVaw1o377mR56zCOticAsW7EIV&ust=1694407315300000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMin3qKdn4EDFQAAAAAdAAAAABAE
+  version: 1.0.1
+  email: 3551906947@qq.com
+  wechat_image: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.runoob.com%2Fcss%2Fcss-image-gallery.html&psig=AOvVaw1o377mR56zCOticAsW7EIV&ust=1694407315300000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMin3qKdn4EDFQAAAAAdAAAAABAE
+  name: 少年
+  job: 后端开发
+  addr: 陕西西安
+  slogan: 少年
+  slogan_en: SHAONIAN
+  web: http://www.shaonian.com/
+  bilibili_url: https://space.bilibili.com/1681662647?spm_id_from=333.788.0.0
+  gitee_url: https://github.com/15294440097/go_projects
+  github_url: https://github.com/15294440097/go_projects/
+email:
+  host: smtp.qq.com
+  port: 456
+  user: xxx@qq.com
+  password: xxx
+  default_from_email: 少年
+  uer_ssl: true
+  user_tls: true
+jwt:
+  secret: xxx
+  expires: 48
+  issuer: xx
+qq:
+  app_id: "xx"
+  key: xx
+  redirect: http://xx.xx.com/login?flag=qq
+qi_niu:
+  enable: true
+  access_key: y_XTiaH5dywx_R-J-twejWCQRXvBd5jI54YT9ihT
+  secret_key: 2g0S7zGWZ_zca0BVwYTeugUoZJepYLsYjd5bKGir
+  bucket: god-han
+  cdn: xx://xx.xx.com/
+  zone: z2
+  size: 5
