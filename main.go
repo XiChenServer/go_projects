@@ -2,11 +2,17 @@ package main
 
 import (
 	"virus/core"
+	_ "virus/docs"
 	"virus/flag"
 	"virus/global"
 	"virus/routers"
 )
 
+// @title           gvb_server API文档
+// @version         1.0
+// @description     gvb_server API文档
+// @host      127.0.0.1:8080
+// @BasePath  /
 func main() {
 	core.InitConf()
 	global.Log = core.InitLogger()

@@ -36,6 +36,7 @@ func getCfg(q config.QiNiu) storage.Config {
 func UploadImage(data []byte, imageName string, prefix string) (filePath string, err error) {
 	if !global.Config.QiNiu.Enable {
 		return "", errors.New("没有启用")
+
 	}
 	q := global.Config.QiNiu
 	if q.AccessKey == "" || q.SecretKey == "" {

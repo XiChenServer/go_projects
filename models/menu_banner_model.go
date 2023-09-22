@@ -5,5 +5,5 @@ type MenuBannerModel struct {
 	MenuModel   MenuModel   `gorm:"foreignKey:MenuID"`
 	BannerID    uint        `json:"banner_id"`
 	BannerModel BannerModel `gorm:"foreignKey:BannerID"`
-	Sort        int         `gorm:"size:18" json:"sort"`
+	Sort        int         `gorm:"size:10" json:"sort"`
 }

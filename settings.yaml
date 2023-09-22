@@ -57,6 +57,7 @@ qi_niu:
   access_key: y_XTiaH5dywx_R-J-twejWCQRXvBd5jI54YT9ihT
   secret_key: 2g0S7zGWZ_zca0BVwYTeugUoZJepYLsYjd5bKGir
   bucket: god-han
-  cdn: xx://xx.xx.com/
+  cdn: http://s1298bixo.hn-bkt.clouddn.com/
   zone: z2
+  prefix: "gvb"
   size: 5

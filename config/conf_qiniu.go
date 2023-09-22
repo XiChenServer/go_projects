@@ -7,5 +7,6 @@ type QiNiu struct {
 	Bucket    string `json:"bucket" yaml:"bucket"`
 	CDN       string `yaml:"cdn" json:"cdn"`
 	Zone      string `json:"zone" yaml:"zone"`
+	Prefix    string `json:"prefix" yaml:"prefix"`
 	Size      int    `yaml:"size" json:"size"`
 }

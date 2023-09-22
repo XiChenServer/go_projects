@@ -22,7 +22,9 @@ func ComList[T any](model T, option Option) (list []T, count int64, err error) {
 	//var p []models.BannerModel
 	//i := global.DB.Find(&p).RowsAffected
 	//fmt.Println(i)
-	count = DB.Debug().Find(&list).RowsAffected
+	query := DB.Where(model)
+	count = query.Select("id").Find(&list).RowsAffected
+	query = DB.Where(model)
 	offset := (option.Page - 1) * option.Limit
 	if offset < 0 {
 		offset = 0
