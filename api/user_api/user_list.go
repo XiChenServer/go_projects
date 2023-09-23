@@ -11,20 +11,8 @@ import (
 )
 
 func (UserApi) UserListView(c *gin.Context) {
-	token := c.Request.Header.Get("token")
-	//fmt.Println(token)
-	if token == "" {
-		res.FailWithMessage("没携带token", c)
-		return
-	}
-	claims, err := jwts.ParseToken(token)
-	if err != nil {
-		res.FailWithMessage("token错误", c)
-		return
-	}
-	if ctype.Role(claims.Role) == ctype.PermissionAdmin {
-
-	}
+	_claims, _ := c.Get("claims")
+	claims := _claims.(*jwts.CustomClaims)
 	var page models.PageInfo
 	if err := c.ShouldBindQuery(&page); err != nil {
 		res.FailWithCode(res.ArgumentError, c)
