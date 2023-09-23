@@ -5,6 +5,7 @@ import (
 	"virus/api/images_api"
 	"virus/api/menu_api"
 	"virus/api/settings_api"
+	"virus/api/user_api"
 )
 
 type ApiGroup struct {
@@ -12,6 +13,7 @@ type ApiGroup struct {
 	ImagesApi   images_api.ImagesApi
 	AdverstApi  advert_api.AdvertApi
 	MenuApi     menu_api.MenuApi
+	UserApi     user_api.UserApi
 }
 
 var ApiGroupApp = new(ApiGroup)

@@ -44,9 +44,9 @@ email:
   default_from_email: 少年
   uer_ssl: true
   user_tls: true
-jwt:
-  secret: xxx
-  expires: 48
+jwy:
+  secret: xxxx
+  expires: 2
   issuer: xx
 qq:
   app_id: "xx"

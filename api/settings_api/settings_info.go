@@ -29,7 +29,7 @@ func (SettingsApi) SettingInfoView(c *gin.Context) {
 		res.OkWithData(global.Config.QQ, c)
 	case "qiniu":
 		res.OkWithData(global.Config.QiNiu, c)
-	case "jwt":
+	case "jwy":
 		res.OkWithData(global.Config.Jwy, c)
 	default:
 		res.FailWithMessage("没有对应的配置信息", c)
