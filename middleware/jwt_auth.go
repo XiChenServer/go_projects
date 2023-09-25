@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"virus/models/ctype"
 	"virus/models/res"
+	"virus/service/redis_ser"
 	"virus/utils/jwts"
 )
 
@@ -22,6 +23,11 @@ func JwtAuth() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
+		if redis_ser.CheckLogout(c, token) {
+			res.FailWithMessage("token失效", c)
+			c.Abort()
+			return
+		}
 		c.Set("claims", claims)
 	}
 }
@@ -37,6 +43,11 @@ func JwtAdmin() gin.HandlerFunc {
 		claims, err := jwts.ParseToken(token)
 		if err != nil {
 			res.FailWithMessage("token错误", c)
+			c.Abort()
+			return
+		}
+		if redis_ser.CheckLogout(c, token) {
+			res.FailWithMessage("token失效", c)
 			c.Abort()
 			return
 		}

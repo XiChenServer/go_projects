@@ -17,6 +17,7 @@ func main() {
 	core.InitConf()
 	global.Log = core.InitLogger()
 	global.DB = core.InitGorm()
+	global.Redis = core.ConnectRedis()
 	option := flag.Parse()
 	if flag.IsWebStop(option) {
 		flag.SwitchOption(option)
