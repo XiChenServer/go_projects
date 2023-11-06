@@ -1,1 +1,7 @@
-package grpc_todolist_tmp
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("abb")
+}
