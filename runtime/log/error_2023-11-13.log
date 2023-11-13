@@ -1,0 +1,1110 @@
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:08:43"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:08:56"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:09:06"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:11:52"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:13:27"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:13:34"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 18:57:54"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:05:20"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:07:54"}
+panic error time:2023-11-13 19:07:57
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 7 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d488, 0xc00012c000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d488, 0xc00012c000}, {0xc0001ba140, 0x45}, {0xc000119230, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc0001ba140?, 0xc000539088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000686144?, {0xb3d488?, 0xc00012c000?}, {0xc0001ba140?, 0x99a680?}, {0xc000119230?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000528080?, {0xc0001ba140?, 0xc00051f2e0?}, {0xc000119230?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000528080)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000528080, {0xc0006855a0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000124820, {0x9b6c40?, 0xc000012120?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002c58f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc00052c000)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc00052c000)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000502680, 0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000502680, {0xb3cee0?, 0xc000526000}, 0xc0000f2c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000688ea0?}, {0xb3cee0, 0xc000526000}, 0xc0000f2c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001b41b0, {0xb3d4f8, 0xc000688db0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:08:21
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 7 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d488, 0xc00012c000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d488, 0xc00012c000}, {0xc0001ba230, 0x45}, {0xc000119630, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc0001ba230?, 0xc000539088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000686340?, {0xb3d488?, 0xc00012c000?}, {0xc0001ba230?, 0x99a680?}, {0xc000119630?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000528200?, {0xc0001ba230?, 0xc0005392e0?}, {0xc000119630?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000528200)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000528200, {0xc0006855a0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000125110, {0x9b6c40?, 0xc0000122b8?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002c60f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc00052c000)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc00052c000)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000502680, 0xc00052c000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000502680, {0xb3cee0?, 0xc0005260e0}, 0xc00052c100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc000688ea0?}, {0xb3cee0, 0xc0005260e0}, 0xc00052c100)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001b41b0, {0xb3d4f8, 0xc000688db0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:08:53"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:09:15"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:09:27"}
+panic error time:2023-11-13 19:09:37
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 52 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc0006c00f0, 0x45}, {0xc000604740, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc0006c00f0?, 0xc0005f3088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc0005a5150?, {0xb3d468?, 0xc000036120?}, {0xc0006c00f0?, 0x99a680?}, {0xc000604740?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000617a00?, {0xc0006c00f0?, 0xc0005e72e0?}, {0xc000604740?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000617a00)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000617a00, {0xc000606f20, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0003f2a90, {0x9b6c40?, 0xc00069c2d0?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00058238f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc0005c6d00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc0005c6d00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0005c6d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc0005c6d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0005c6d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000580340, 0xc0005c6d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000580340, {0xb3cec0?, 0xc0005c5180}, 0xc0005c6c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0005a73b0?}, {0xb3cec0, 0xc0005c5180}, 0xc0005c6c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122240, {0xb3d4d8, 0xc0005a72c0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:09:54
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 52 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a1e0, 0x45}, {0xc0003eeb90, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a1e0?, 0xc0005f3088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000688ab0?, {0xb3d468?, 0xc000036120?}, {0xc00003a1e0?, 0x99a680?}, {0xc0003eeb90?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc0006a1780?, {0xc00003a1e0?, 0xc0005f32e0?}, {0xc0003eeb90?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc0006a1780)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0006a1780, {0xc000606f20, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00046a000, {0x9b6c40?, 0xc000468030?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00048006f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000452100)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000452100)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000580340, 0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000580340, {0xb3cec0?, 0xc00045c000}, 0xc000452000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0005a73b0?}, {0xb3cec0, 0xc00045c000}, 0xc000452000)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122240, {0xb3d4d8, 0xc0005a72c0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:11:09
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 52 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00052e050, 0x45}, {0xc000684b40, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00052e050?, 0xc0005f3088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc0006023c0?, {0xb3d468?, 0xc000036120?}, {0xc00052e050?, 0x99a680?}, {0xc000684b40?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc00042c000?, {0xc00052e050?, 0xc0005f32e0?}, {0xc000684b40?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc00042c000)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc00042c000, {0xc000606f20, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0000aa820, {0x9b6c40?, 0xc0000126f0?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00050008f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc00051a200)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc00051a200)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00051a200)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00051a200)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00051a200)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000580340, 0xc00051a200)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000580340, {0xb3cec0?, 0xc0005220e0}, 0xc00051a300)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0005a73b0?}, {0xb3cec0, 0xc0005220e0}, 0xc00051a300)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122240, {0xb3d4d8, 0xc0005a72c0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:11:15
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 52 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a2d0, 0x45}, {0xc0003ef2d0, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a2d0?, 0xc0005f3088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000688cf0?, {0xb3d468?, 0xc000036120?}, {0xc00003a2d0?, 0x99a680?}, {0xc0003ef2d0?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc0006a1900?, {0xc00003a2d0?, 0xc0005f32e0?}, {0xc0003ef2d0?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc0006a1900)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0006a1900, {0xc000606f20, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00046a410, {0x9b6c40?, 0xc000468138?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00048010f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000452100)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000452100)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000580340, 0xc000452100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000580340, {0xb3cec0?, 0xc00045c1c0}, 0xc000452300)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0005a73b0?}, {0xb3cec0, 0xc00045c1c0}, 0xc000452300)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000122240, {0xb3d4d8, 0xc0005a72c0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:12:26"}
+panic error time:2023-11-13 19:12:30
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 7 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc0001c40a0, 0x45}, {0xc000025250, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc0001c40a0?, 0xc000275088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000036904?, {0xb3d468?, 0xc000036120?}, {0xc0001c40a0?, 0x99a680?}, {0xc000025250?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000166080?, {0xc0001c40a0?, 0xc0001632e0?}, {0xc000025250?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000166080)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000166080, {0xc00007d1a0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0000a2680, {0x9b6c40?, 0xc00017a030?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc0005000ef?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc0000aa100)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc0000aa100)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0000aa100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc0000aa100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0000aa100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000482820, 0xc0000aa100)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000482820, {0xb3cec0?, 0xc000150000}, 0xc0000aa000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00009baa0?}, {0xb3cec0, 0xc000150000}, 0xc0000aa000)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001181b0, {0xb3d4d8, 0xc0004351a0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:12:32
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 7 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a230, 0x45}, {0xc00052af00, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a230?, 0xc000275088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc00052ec64?, {0xb3d468?, 0xc000036120?}, {0xc00003a230?, 0x99a680?}, {0xc00052af00?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc0003b1200?, {0xc00003a230?, 0xc0002752e0?}, {0xc00052af00?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc0003b1200)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0003b1200, {0xc00007d1a0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0003ec820, {0x9b6c40?, 0xc000012d98?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00048e66f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000454e00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000454e00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000454e00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000454e00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000454e00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000482820, 0xc000454e00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000482820, {0xb3cec0?, 0xc000453180}, 0xc000454c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00009baa0?}, {0xb3cec0, 0xc000453180}, 0xc000454c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001181b0, {0xb3d4d8, 0xc0004351a0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:13:09"}
+panic error time:2023-11-13 19:13:13
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 18 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a1e0, 0x45}, {0xc000690fa0, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a1e0?, 0xc00014f088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc0006a6e30?, {0xb3d468?, 0xc000036120?}, {0xc00003a1e0?, 0x99a680?}, {0xc000690fa0?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000431700?, {0xc00003a1e0?, 0xc0001432e0?}, {0xc000690fa0?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000431700)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000431700, {0xc00007d280, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000468b60, {0x9b6c40?, 0xc000012d20?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00045652f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc00011cd00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc00011cd00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0004ba4e0, 0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0004ba4e0, {0xb3cec0?, 0xc00011b180}, 0xc00011cc00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004b5cb0?}, {0xb3cec0, 0xc00011b180}, 0xc00011cc00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00019a1b0, {0xb3d4d8, 0xc0004b5bc0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:14:38
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 18 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a2d0, 0x45}, {0xc000691380, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a2d0?, 0xc00014f088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc0006a7020?, {0xb3d468?, 0xc000036120?}, {0xc00003a2d0?, 0x99a680?}, {0xc000691380?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000431800?, {0xc00003a2d0?, 0xc00014f2e0?}, {0xc000691380?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000431800)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000431800, {0xc00007d280, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000469040, {0x9b6c40?, 0xc000012eb8?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc000456a2f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc00011cd00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc00011cd00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0004ba4e0, 0xc00011cd00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0004ba4e0, {0xb3cec0?, 0xc00011b260}, 0xc00011ce00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004b5cb0?}, {0xb3cec0, 0xc00011b260}, 0xc00011ce00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00019a1b0, {0xb3d4d8, 0xc0004b5bc0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:16:58"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:19:14"}
+panic error time:2023-11-13 19:19:17
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 51 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc0001a6000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc0001a6000}, {0xc00003a190, 0x45}, {0xc00062c800, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a190?, 0xc000153088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc0005229e0?, {0xb3d468?, 0xc0001a6000?}, {0xc00003a190?, 0x99a680?}, {0xc00062c800?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000125400?, {0xc00003a190?, 0xc0001472e0?}, {0xc00062c800?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000125400)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000125400, {0xc0003065c0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000506b60, {0x9b6c40?, 0xc0000123a8?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002cd2f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000126d00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000126d00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000126d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000126d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000126d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000007a00, 0xc000126d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000007a00, {0xb3cec0?, 0xc000123180}, 0xc000126c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0002c5e30?}, {0xb3cec0, 0xc000123180}, 0xc000126c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00022a1b0, {0xb3d4d8, 0xc0002c5cb0})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:20:03"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:27:15"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:33:01"}
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:33:11"}
+panic error time:2023-11-13 19:33:15
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 11 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a230, 0x45}, {0xc000256070, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a230?, 0xc0001e5088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000262080?, {0xb3d468?, 0xc000036120?}, {0xc00003a230?, 0x99a680?}, {0xc000256070?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000431700?, {0xc00003a230?, 0xc0000ad2e0?}, {0xc000256070?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000431700)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000431700, {0xc00025b2a0, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0004668f0, {0x9b6c40?, 0xc000012d98?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00010e78f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc0004f2d00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc0004f2d00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0004f2d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc0004f2d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc0004f2d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000602340, 0xc0004f2d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000602340, {0xb3cec0?, 0xc0004f1180}, 0xc0004f2c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc00039c8d0?}, {0xb3cec0, 0xc0004f1180}, 0xc0004f2c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001981b0, {0xb3d4d8, 0xc00039c600})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:35:32"}
+panic error time:2023-11-13 19:35:36
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 18 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a1e0, 0x45}, {0xc000596fb0, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a1e0?, 0xc000159088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000487fe0?, {0xb3d468?, 0xc000036120?}, {0xc00003a1e0?, 0x99a680?}, {0xc000596fb0?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc0000dd700?, {0xc00003a1e0?, 0xc00014d2e0?}, {0xc000596fb0?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc0000dd700)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000dd700, {0xc00007d280, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00046c820, {0x9b6c40?, 0xc000012d68?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc0004503ef?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000124d00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000124d00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0004ba820, 0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0004ba820, {0xb3cec0?, 0xc000123180}, 0xc000124c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004b5710?}, {0xb3cec0, 0xc000123180}, 0xc000124c00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000198240, {0xb3d4d8, 0xc0004b5620})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:35:37
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 18 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d468, 0xc000036120}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d468, 0xc000036120}, {0xc00003a2d0, 0x45}, {0xc000597390, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a2d0?, 0xc000159088)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc00058f050?, {0xb3d468?, 0xc000036120?}, {0xc00003a2d0?, 0x99a680?}, {0xc000597390?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc0000dd800?, {0xc00003a2d0?, 0xc0001592e0?}, {0xc000597390?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc0000dd800)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000dd800, {0xc00007d280, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00046cd00, {0x9b6c40?, 0xc000012f00?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00045054f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000124d00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0x185
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000124d00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0004ba820, 0xc000124d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0004ba820, {0xb3cec0?, 0xc000123260}, 0xc000124e00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0004b5710?}, {0xb3cec0, 0xc000123260}, 0xc000124e00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000198240, {0xb3d4d8, 0xc0004b5620})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+{"level":"error","msg":"[]","mysql connect error":"sql: unknown driver \"mysql\" (forgotten import?)","time":"2023-11-13 19:36:56"}
+panic error time:2023-11-13 19:37:00
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 26 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d428, 0xc00012c000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d428, 0xc00012c000}, {0xc00003a0f0, 0x45}, {0xc0000245f0, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a0f0?, 0xc0001930b0)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000036490?, {0xb3d428?, 0xc00012c000?}, {0xc00003a0f0?, 0x99a680?}, {0xc0000245f0?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000625c00?, {0xc00003a0f0?, 0xc000193308?}, {0xc0000245f0?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000625c00)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000625c00, {0xc000621100, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000610750, {0x9b6c40?, 0xc000012150?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002c1cf?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0xb6
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000076c0, 0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000076c0, {0xb3ce80?, 0xc00061f0a0}, 0xc000626b00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0001b5b30?}, {0xb3ce80, 0xc00061f0a0}, 0xc000626b00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002321b0, {0xb3d498, 0xc0001b5a40})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:37:01
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 26 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d428, 0xc00012c000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d428, 0xc00012c000}, {0xc00003a1e0, 0x45}, {0xc0000249d0, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a1e0?, 0xc0002bd0b0)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000036680?, {0xb3d428?, 0xc00012c000?}, {0xc00003a1e0?, 0x99a680?}, {0xc0000249d0?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000625d00?, {0xc00003a1e0?, 0xc0002bd308?}, {0xc0000249d0?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000625d00)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000625d00, {0xc000621100, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000610c30, {0x9b6c40?, 0xc0000122e8?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002c22f?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0xb6
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000076c0, 0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000076c0, {0xb3ce80?, 0xc00061f180}, 0xc000626d00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0001b5b30?}, {0xb3ce80, 0xc00061f180}, 0xc000626d00)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002321b0, {0xb3d498, 0xc0001b5a40})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
+panic error time:2023-11-13 19:40:46
+runtime error: invalid memory address or nil pointer dereference
+stacktrace from panic:goroutine 26 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+go_ranking/pkg/logger.Recover.func1()
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:138 +0x2b9
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x9c4c60, 0xeb9740})
+	/usr/local/go/src/runtime/panic.go:884 +0x213
+database/sql.(*DB).conn(0x0, {0xb3d428, 0xc00012c000}, 0x1)
+	/usr/local/go/src/database/sql/sql.go:1282 +0x53
+database/sql.(*DB).query(0x0?, {0xb3d428, 0xc00012c000}, {0xc00003a0f0, 0x45}, {0xc000024220, 0x1, 0x1}, 0x8b?)
+	/usr/local/go/src/database/sql/sql.go:1721 +0x5d
+database/sql.(*DB).QueryContext.func1(0x0?)
+	/usr/local/go/src/database/sql/sql.go:1704 +0x55
+database/sql.(*DB).retry(0xc00003a0f0?, 0xc00018f0b0)
+	/usr/local/go/src/database/sql/sql.go:1538 +0x47
+database/sql.(*DB).QueryContext(0xc000036190?, {0xb3d428?, 0xc00012c000?}, {0xc00003a0f0?, 0x99a680?}, {0xc000024220?, 0xa5c04d?, 0x11?})
+	/usr/local/go/src/database/sql/sql.go:1703 +0xcc
+database/sql.(*DB).Query(0xc000624000?, {0xc00003a0f0?, 0xc00018f308?}, {0xc000024220?, 0x9b3900?, 0xa27680?})
+	/usr/local/go/src/database/sql/sql.go:1717 +0x45
+github.com/jinzhu/gorm.queryCallback(0xc000624000)
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:72 +0x744
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000624000, {0xc000621100, 0x3, 0x99a680?})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0006101a0, {0x9b6c40?, 0xc000012018?}, {0x0, 0x0, 0x0})
+	/home/zwm/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x269
+go_ranking/models.GetUserTest(0xc00002c1af?)
+	/home/zwm/GolandProjects/go_ranking/models/user.go:15 +0xc5
+go_ranking/controllers.UserController.GetUserInfo({}, 0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/controllers/user.go:16 +0xb6
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+go_ranking/pkg/logger.Recover(0xc000626c00)
+	/home/zwm/GolandProjects/go_ranking/pkg/logger/logger.go:148 +0x6b
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x82
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xe7
+github.com/gin-gonic/gin.(*Context).Next(...)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc0000076c0, 0xc000626c00)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x66b
+github.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc0000076c0, {0xb3ce80?, 0xc00061e000}, 0xc000626000)
+	/home/zwm/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd
+net/http.serverHandler.ServeHTTP({0xc0001b5b30?}, {0xb3ce80, 0xc00061e000}, 0xc000626000)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0002321b0, {0xb3d498, 0xc0001b5a40})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
+
