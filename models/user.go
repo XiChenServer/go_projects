@@ -1,42 +1,30 @@
 package models
 
 import (
-	"fmt"
 	"go_ranking/dao"
+	"time"
 )
 
 type User struct {
-	Id       int
-	Username string
+	Id         int    `json:"id"`
+	Username   string `json:"username"`
+	Password   string `json:"password"`
+	AddTime    int64  `json:"addTime"`
+	UpdateTime int64  `json:"updateTime"`
 }
 
 func (User) TableName() string {
 	return "user"
 }
-func GetUserTest(id int) (User, error) {
+func GetUserInfoByUsername(username string) (User, error) {
 	var user User
-	err := dao.Db.Where("id = ?", id).First(&user).Error
+	err := dao.Db.Where("username = ?", username).First(&user).Error
 	return user, err
 }
 
-func AddUser(username string) (int, error) {
-	user := User{Username: username}
-	fmt.Println(username)
+func AddUser(username string, password string) (int, error) {
+	user := User{Username: username, Password: password, AddTime: time.Now().Unix(), UpdateTime: time.Now().Unix()}
 	err := dao.Db.Create(&user).Error
 	return user.Id, err
-}
-
-func UpdateUser(id int, username string) error {
-	err := dao.Db.Model(&User{}).Where("id = ?", id).Update("username", username).Error
-	return err
-}
-func DeleteUser(id int) error {
-	err := dao.Db.Delete(&User{}, id).Error
-	return err
-}
-func GetUserListTest(id int) ([]User, error) {
-	var users []User
-	err := dao.Db.Where("id < ?", id).Find(&users).Error
-	return users, err
 
 }

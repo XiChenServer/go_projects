@@ -1,32 +1,31 @@
 package router
 
 import (
+	"github.com/gin-contrib/sessions"
+	sessions_redis "github.com/gin-contrib/sessions/redis"
 	"github.com/gin-gonic/gin"
+	_ "github.com/gorilla/sessions"
+	"go_ranking/config"
 	"go_ranking/controllers"
 	"go_ranking/pkg/logger"
 )
 
 func Router() *gin.Engine {
 	r := gin.Default() //生成实例
+	controllers.InitSqlTable()
 	//创建请求
 	r.Use(gin.LoggerWithConfig(logger.LoggerToFile()))
 	r.Use(logger.Recover)
-	//r.GET("/url", func(ctx *gin.Context) {
-	//	ctx.String(http.StatusOK, "Hello word")
-	//})
+	store, _ := sessions_redis.NewStore(10, "tcp", config.RedisAddress, "", []byte("secret"))
+	r.Use(sessions.Sessions("mysession", store))
 	user := r.Group("/user")
 	{
-
-		user.GET("/info/:id", controllers.UserController{}.GetUserInfo)
-		user.POST("/add", controllers.UserController{}.AddUser)
-		user.POST("/update", controllers.UserController{}.UpdateUser)
-		user.POST("/list", controllers.UserController{}.GetList)
-		user.DELETE("/delete", controllers.UserController{}.DeleteUser)
-		user.POST("/list/test", controllers.UserController{}.GetUserListTest)
+		user.POST("/register", controllers.UserController{}.Register)
+		user.POST("/login", controllers.UserController{}.Login)
 	}
-	order := r.Group("/order")
+	player := r.Group("/player")
 	{
-		order.POST("/list", controllers.OrderController{}.GetList)
+		player.POST("/list", controllers.PlayerController{}.GetPlayers)
 	}
 	return r
 }

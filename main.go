@@ -5,7 +5,9 @@ import (
 )
 
 func main() {
+
 	r := router.Router()
+
 	//defer 后执行
 	//recover可以让崩溃的程序回复过来
 	//panic让程序崩溃

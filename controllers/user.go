@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"go_ranking/models"
 	"strconv"
@@ -9,58 +10,51 @@ import (
 type UserController struct {
 }
 
-func (u UserController) GetUserInfo(c *gin.Context) {
-	idStr := c.Param("id")
-	name := c.Param("name")
-	id, _ := strconv.Atoi(idStr)
-	user, _ := models.GetUserTest(id)
-	ReturnSuccess(c, 0, name, user, 1)
-}
-
-func (u UserController) GetList(c *gin.Context) {
-
-	//logger.Write("日志信息", "user")
-	//ReturnError(c, 4004, "list没有相关信息")
-}
-func (u UserController) AddUser(c *gin.Context) {
-	username := c.DefaultPostForm("name", "")
-
-	id, err := models.AddUser(username)
-	if err != nil {
-		ReturnError(c, 4002, "保存错误")
+func (u UserController) Register(c *gin.Context) {
+	username := c.DefaultPostForm("username", "")
+	password := c.DefaultPostForm("password", "")
+	confirmPassword := c.DefaultPostForm("confirmPassword", "")
+	if username == "" || password == "" || confirmPassword == "" {
+		ReturnError(c, 4001, "请输入正确的信息")
 		return
 	}
-	ReturnSuccess(c, 0, "保存成功", id, 1)
+	if password != confirmPassword {
+		ReturnError(c, 4001, "两次输入密码不同")
+		return
+	}
+	user, _ := models.GetUserInfoByUsername(username)
+	if user.Id != 0 {
+		ReturnError(c, 4001, "该用户已经存在")
+		return
+	}
+	id, _ := models.AddUser(username, EncryMd5(password))
+	ReturnSuccess(c, 0, "注册成功", id, 1)
 }
 
-func (u UserController) UpdateUser(c *gin.Context) {
-	username := c.DefaultPostForm("name", "")
-	idStr := c.DefaultPostForm("id", "")
-	id, _ := strconv.Atoi(idStr)
-	err := models.UpdateUser(id, username)
-	if err != nil {
-		ReturnError(c, 4002, "修改错误")
-		return
-	}
-	ReturnSuccess(c, 0, "修改成功", id, 1)
+type UserApi struct {
+	Id       int    `json:"id"`
+	Username string `json:"username"`
 }
-func (u UserController) DeleteUser(c *gin.Context) {
-	idStr := c.DefaultPostForm("id", "")
-	id, _ := strconv.Atoi(idStr)
-	err := models.DeleteUser(id)
-	if err != nil {
-		ReturnError(c, 4002, "删除错误")
+
+func (u UserController) Login(c *gin.Context) {
+	username := c.DefaultPostForm("username", "")
+	password := c.DefaultPostForm("password", "")
+	if username == "" || password == "" {
+		ReturnError(c, 4001, "请输入正确的信息")
 		return
 	}
-	ReturnSuccess(c, 0, "删除成功", id, 1)
-}
-func (u UserController) GetUserListTest(c *gin.Context) {
-	idStr := c.DefaultPostForm("id", "")
-	id, _ := strconv.Atoi(idStr)
-	users, err := models.GetUserListTest(id)
-	if err != nil {
-		ReturnError(c, 4002, "获取错误")
+	user, _ := models.GetUserInfoByUsername(username)
+	if user.Id == 0 {
+		ReturnError(c, 4001, "用户名或密码不正确")
 		return
 	}
-	ReturnSuccess(c, 0, "获取成功", users, 1)
+	if user.Password != EncryMd5(password) {
+		ReturnError(c, 4001, "用户名或密码不正确")
+		return
+	}
+	session := sessions.Default(c)
+	session.Set("login:"+strconv.Itoa(user.Id), user.Id)
+	session.Save()
+	data := UserApi{Id: user.Id, Username: user.Username}
+	ReturnSuccess(c, 0, "登录成功", data, 1)
 }
