@@ -12,7 +12,7 @@ import (
 
 func Router() *gin.Engine {
 	r := gin.Default() //生成实例
-	controllers.InitSqlTable()
+	//controllers.InitSqlTable()
 	//创建请求
 	r.Use(gin.LoggerWithConfig(logger.LoggerToFile()))
 	r.Use(logger.Recover)
@@ -27,5 +27,10 @@ func Router() *gin.Engine {
 	{
 		player.POST("/list", controllers.PlayerController{}.GetPlayers)
 	}
+	vote := r.Group("/vote")
+	{
+		vote.POST("/add", controllers.VoteController{}.AddVote)
+	}
+	r.POST("/ranking", controllers.PlayerController{}.GetRanking)
 	return r
 }

@@ -1,0 +1,8 @@
+2023-11-15 20:05:27 - 127.0.0.1 "POST /vote/add HTTP/1.1 200 102.838µs "PostmanRuntime/7.35.0" "
+2023-11-15 20:05:41 - 127.0.0.1 "POST /vote/add HTTP/1.1 200 4.265036ms "PostmanRuntime/7.35.0" "
+2023-11-15 20:07:50 - 127.0.0.1 "POST /vote/add HTTP/1.1 200 695.181µs "PostmanRuntime/7.35.0" "
+2023-11-15 20:14:31 - 127.0.0.1 "GET /ranking HTTP/1.1 404 4.745µs "PostmanRuntime/7.35.0" "
+2023-11-15 20:14:41 - 127.0.0.1 "POST /ranking HTTP/1.1 404 3.858µs "PostmanRuntime/7.35.0" "
+2023-11-15 20:14:48 - 127.0.0.1 "POST /ranking HTTP/1.1 200 619.47µs "PostmanRuntime/7.35.0" "
+2023-11-15 20:15:51 - 127.0.0.1 "POST /ranking HTTP/1.1 200 537.897µs "PostmanRuntime/7.35.0" "
+2023-11-15 22:10:41 - 127.0.0.1 "POST /ranking HTTP/1.1 200 890.126µs "PostmanRuntime/7.35.0" "

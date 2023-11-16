@@ -1,6 +1,9 @@
 package models
 
-import "go_ranking/dao"
+import (
+	"github.com/jinzhu/gorm"
+	"go_ranking/dao"
+)
 
 type Player struct {
 	Id          int    `json:"id"`
@@ -17,8 +20,18 @@ type Player struct {
 func (Player) TableName() string {
 	return "player"
 }
-func GetPlayers(aid int) ([]Player, error) {
+func GetPlayers(aid int, sort string) ([]Player, error) {
 	var players []Player
-	err := dao.Db.Where("aid = ?", aid).Find(&players).Error
+	err := dao.Db.Where("aid = ?", aid).Order(sort).Find(&players).Error
 	return players, err
+}
+
+func GetPlayerInfo(id int) (Player, error) {
+	var player Player
+	err := dao.Db.Where("id = ?", id).First(&player).Error
+	return player, err
+}
+func UpdatePlayerScore(id int) {
+	var player Player
+	dao.Db.Model(&player).Where("id = ?", id).UpdateColumn("score", gorm.Expr("score + ?", 1))
 }
