@@ -15,6 +15,7 @@ import (
 // @Param page query int false "请输入当前页，默认第一页"
 // @Param size query int false "size"
 // @Param keyword query string false "keyword"
+// @Param category_identity query string false "category_identity"
 // @Success 200 {string} json "{"code":"200","data":""}"
 // @Router /problem-list [get]
 func GetProblemList(c *gin.Context) {
@@ -32,9 +33,11 @@ func GetProblemList(c *gin.Context) {
 	page = (page - 1) * size
 	var count int64
 	keywork := c.Query("keyword")
-	list := make([]*models.Problem, 0)
-	tx := models.GetProblemList(keywork)
-	err = tx.Count(&count).Omit("content").Offset(page).Limit(size).Find(&list).Error
+	categoryIdentity := c.Query("category_identity")
+	list := make([]*models.ProblemBasic, 0)
+	tx := models.GetProblemList(keywork, categoryIdentity)
+	err = tx.Omit("content").Count(&count).Offset(page).Limit(size).Find(&list).Error
+
 	if err != nil {
 		log.Println("get problem list error:", err)
 	}

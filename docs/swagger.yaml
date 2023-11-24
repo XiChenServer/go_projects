@@ -16,6 +16,10 @@ paths:
         in: query
         name: keyword
         type: string
+      - description: category_identity
+        in: query
+        name: category_identity
+        type: string
       responses:
         "200":
           description: '{"code":"200","data":""}'

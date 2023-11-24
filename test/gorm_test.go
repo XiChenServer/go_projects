@@ -15,12 +15,12 @@ func TestGormTest(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	data := make([]*models.Problem, 0)
+	data := make([]*models.ProblemBasic, 0)
 	err = db.Find(&data).Error
 	if err != nil {
 		t.Fatal(err)
 	}
 	for _, v := range data {
-		fmt.Printf("Problem == %v \n", v)
+		fmt.Printf("ProblemBasic == %v \n", v)
 	}
 }
