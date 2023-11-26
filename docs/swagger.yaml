@@ -43,4 +43,50 @@ paths:
       summary: 问题列表
       tags:
       - 公共方法
+  /submit-list:
+    get:
+      parameters:
+      - description: page
+        in: query
+        name: page
+        type: integer
+      - description: size
+        in: query
+        name: size
+        type: integer
+      - description: problem_identity
+        in: query
+        name: problem_identity
+        type: string
+      - description: user_identity
+        in: query
+        name: user_identity
+        type: string
+      - description: status
+        in: query
+        name: status
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 提交列表
+      tags:
+      - 公共方法
+  /user-detail:
+    get:
+      parameters:
+      - description: problem identity
+        in: query
+        name: identity
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 用户详情
+      tags:
+      - 公共方法
 swagger: "2.0"
