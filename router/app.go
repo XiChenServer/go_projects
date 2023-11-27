@@ -18,7 +18,11 @@ func Router() *gin.Engine {
 	r.GET("/problem-detail", service.GetProblemDetail)
 	//用户
 	r.GET("/user-detail", service.GetUserDetail)
+	r.POST("/login", service.Login)
+	r.POST("/send-code", service.SendCode)
+
 	//提交记录
 	r.GET("/submit-list", service.GetSubmitList)
+
 	return r
 }
