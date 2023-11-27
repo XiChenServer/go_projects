@@ -5,6 +5,10 @@ import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/go-gomail/gomail"
+	uuid "github.com/satori/go.uuid"
+	"math/rand"
+	"strconv"
+	"time"
 )
 
 type UserClaims struct {
@@ -70,4 +74,16 @@ func SendCode(toUserEmail, code string) error {
 	// Send the email
 	err := d.DialAndSend(m)
 	return err
+}
+func GetUUID() string {
+	return uuid.NewV4().String()
+}
+func GetRand() string {
+	rand.Seed(time.Now().UnixNano())
+	rand.Intn(10)
+	s := ""
+	for i := 0; i < 6; i++ {
+		s += strconv.Itoa(rand.Intn(10))
+	}
+	return s
 }
