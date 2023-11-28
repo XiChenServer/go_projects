@@ -45,6 +45,70 @@ const docTemplate = `{
                 }
             }
         },
+        "/problem-create": {
+            "post": {
+                "tags": [
+                    "管理员私有方法"
+                ],
+                "summary": "问题创建",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "authorization",
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "title",
+                        "name": "title",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "content",
+                        "name": "content",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "max_runtime",
+                        "name": "max_runtime",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "max_memory",
+                        "name": "max_memory",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "array",
+                        "description": "category_ids",
+                        "name": "category_ids",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "array",
+                        "description": "test_cases",
+                        "name": "test_cases",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":\"200\",\"data\":\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/problem-detail": {
             "get": {
                 "tags": [
@@ -253,6 +317,46 @@ const docTemplate = `{
                         "description": "status",
                         "name": "status",
                         "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":\"200\",\"data\":\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/test/get_test": {
+            "get": {
+                "tags": [
+                    "测试方法"
+                ],
+                "summary": "get请求测试方法",
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":\"200\",\"data\":\"\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/test/post_test": {
+            "post": {
+                "tags": [
+                    "测试方法"
+                ],
+                "summary": "post请求测试方法",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "test",
+                        "name": "test",
+                        "in": "formData"
                     }
                 ],
                 "responses": {

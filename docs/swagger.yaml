@@ -20,6 +20,49 @@ paths:
       summary: 用户登录
       tags:
       - 公共方法
+  /problem-create:
+    post:
+      parameters:
+      - description: authorization
+        in: header
+        name: authorization
+        required: true
+        type: string
+      - description: title
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: content
+        in: formData
+        name: content
+        required: true
+        type: string
+      - description: max_runtime
+        in: formData
+        name: max_runtime
+        type: string
+      - description: max_memory
+        in: formData
+        name: max_memory
+        type: string
+      - description: category_ids
+        in: formData
+        name: category_ids
+        type: array
+      - description: test_cases
+        in: formData
+        name: test_cases
+        required: true
+        type: array
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 问题创建
+      tags:
+      - 管理员私有方法
   /problem-detail:
     get:
       parameters:
@@ -162,6 +205,31 @@ paths:
       summary: 提交列表
       tags:
       - 公共方法
+  /test/get_test:
+    get:
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: get请求测试方法
+      tags:
+      - 测试方法
+  /test/post_test:
+    post:
+      parameters:
+      - description: test
+        in: formData
+        name: test
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: post请求测试方法
+      tags:
+      - 测试方法
   /user-detail:
     get:
       parameters:

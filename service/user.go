@@ -61,7 +61,6 @@ func Login(c *gin.Context) {
 		return
 	}
 	password = helper.GetMd5(password)
-	println(username, password)
 	data := new(models.UserBasic)
 	err := models.DB.Where("name = ? AND password = ?", username, password).First(&data).Error
 	if err != nil {
@@ -79,7 +78,7 @@ func Login(c *gin.Context) {
 		return
 
 	}
-	token, err := helper.GenerateToken(data.Identity, data.Name)
+	token, err := helper.GenerateToken(data.Identity, data.Name, data.IsAdmin)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"code": -1,
@@ -200,11 +199,11 @@ func Register(c *gin.Context) {
 
 		c.JSON(http.StatusOK, gin.H{
 			"code": -1,
-			"msg":  "重新后去验证码",
+			"msg":  "重新获取验证码",
 		})
 		return
 	}
-	token, err := helper.GenerateToken(userIdentity, name)
+	token, err := helper.GenerateToken(userIdentity, name, data.IsAdmin)
 	if err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"code": -1,
