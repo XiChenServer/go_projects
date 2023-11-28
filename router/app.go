@@ -38,6 +38,14 @@ func Router() *gin.Engine {
 
 	//管理员私有
 	r.POST("/problem-create", middlewares.AuthAdminCheck(), service.ProblemCreate)
+	//分类列表
+	r.GET("/category-list", middlewares.AuthAdminCheck(), service.GetCategoryList)
+	//分类创建
+	r.POST("/category-create", middlewares.AuthAdminCheck(), service.CategoryCreate)
+	//分类删除
+	r.DELETE("/category-delete", middlewares.AuthAdminCheck(), service.CategoryDelete)
+	//分类修改
+	r.PUT("/category-modify", middlewares.AuthAdminCheck(), service.CategoryModify)
 
 	return r
 }

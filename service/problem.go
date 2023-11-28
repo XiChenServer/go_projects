@@ -92,7 +92,7 @@ func GetProblemDetail(c *gin.Context) {
 	})
 }
 
-// problem-create
+// ProblemCreate
 // @Tags 管理员私有方法
 // @Summary 问题创建
 // @Param authorization header string true "authorization"

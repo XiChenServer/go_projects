@@ -19,7 +19,7 @@ func AuthAdminCheck() gin.HandlerFunc {
 			})
 			return
 		}
-		if userClaim.IsAdmin != 1 {
+		if userClaim == nil || userClaim.IsAdmin != 1 {
 			c.JSON(http.StatusOK, gin.H{
 				"code":    http.StatusUnauthorized,
 				"message": "Unauthorized aDMIN",
