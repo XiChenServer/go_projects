@@ -2,11 +2,13 @@ package service
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"gin_gorm_oj/define"
 	"gin_gorm_oj/helper"
 	"gin_gorm_oj/models"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 	"io"
 	"io/ioutil"
 	"log"
@@ -187,15 +189,35 @@ func Submit(c *gin.Context) {
 		}
 
 	}
-
-	err = models.DB.Create(sb).Error
-	if err != nil {
+	if err = models.DB.Transaction(func(tx *gorm.DB) error {
+		err = tx.Create(sb).Error
+		if err != nil {
+			return errors.New("SubmitBasic Save Error:" + err.Error())
+		}
+		m := make(map[string]interface{})
+		m["submit_num"] = gorm.Expr("submit_num + ?", 1)
+		if sb.Status == 1 {
+			m["pass_num"] = gorm.Expr("pass_num + ?", 1)
+		}
+		// 更新 user_basic
+		err = tx.Model(new(models.UserBasic)).Where("identity = ?", userClaim.Identity).Updates(m).Error
+		if err != nil {
+			return errors.New("UserBasic Modify Error:" + err.Error())
+		}
+		// 更新 problem_basic
+		err = tx.Model(new(models.ProblemBasic)).Where("identity = ?", problemIdentity).Updates(m).Error
+		if err != nil {
+			return errors.New("ProblemBasic Modify Error:" + err.Error())
+		}
+		return nil
+	}); err != nil {
 		c.JSON(http.StatusOK, gin.H{
 			"code": -1,
-			"msg":  "submit code error:" + err.Error(),
+			"msg":  "Submit Error:" + err.Error(),
 		})
 		return
 	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"code": 200,
 		"data": map[string]interface{}{
