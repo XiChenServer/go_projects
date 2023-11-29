@@ -13,7 +13,7 @@ type ProblemBasic struct {
 	Content           string             `gorm:"column:content;type:text;" json:"content"`
 	MaxRuntime        int                `gorm:"column:max_runtime;type:int(11);" json:"max_runtime"`
 	MaxMem            int                `gorm:"column:max_mem;type:int(11);" json:"max_mem"`
-	TestCase          []*TestCase        `gorm:"foreignKey:problem_identity;references:identity"`
+	TestCases         []*TestCase        `gorm:"foreignKey:problem_identity;references:identity;" json:"test_cases"` // 关联测试用例表
 }
 
 func (table *ProblemBasic) TableName() string {
