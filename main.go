@@ -10,7 +10,8 @@ func main() {
 
 	utils.InitConfig()
 	utils.InitMySQL()
-	utils.DB.AutoMigrate(&models.UserBasic{})
+	utils.InitRedis()
+	utils.DB.AutoMigrate(&models.UserBasic{}, &models.Community{}, &models.Contact{}, &models.GroupBasic{}, &models.Message{})
 	r := router.Router()
-	r.Run()
+	r.Run(":8081")
 }

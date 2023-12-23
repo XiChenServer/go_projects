@@ -17,7 +17,7 @@ type UserBasic struct {
 	gorm.Model
 	Name          string
 	PassWord      string
-	Phone         string `valid:"matches(^1[3-9]{1}\\d{9}$)"`
+	Phone         string `valid:"matches(^1[3-9]{1}\\d{9}$)"` //正则表达
 	Email         string `valid:"email"`
 	Avatar        string //头像
 	Identity      string
