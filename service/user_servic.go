@@ -264,55 +264,55 @@ func AddFriend(c *gin.Context) {
 	}
 }
 
-////新建群
-//func CreateCommunity(c *gin.Context) {
-//	ownerId, _ := strconv.Atoi(c.Request.FormValue("ownerId"))
-//	name := c.Request.FormValue("name")
-//	icon := c.Request.FormValue("icon")
-//	desc := c.Request.FormValue("desc")
-//	community := models.Community{}
-//	community.OwnerId = uint(ownerId)
-//	community.Name = name
-//	community.Img = icon
-//	community.Desc = desc
-//	code, msg := models.CreateCommunity(community)
-//	if code == 0 {
-//		utils.RespOK(c.Writer, code, msg)
-//	} else {
-//		utils.RespFail(c.Writer, msg)
-//	}
-//}
-//
-////加载群列表
-//func LoadCommunity(c *gin.Context) {
-//	ownerId, _ := strconv.Atoi(c.Request.FormValue("ownerId"))
-//	//	name := c.Request.FormValue("name")
-//	data, msg := models.LoadCommunity(uint(ownerId))
-//	if len(data) != 0 {
-//		utils.RespList(c.Writer, 0, data, msg)
-//	} else {
-//		utils.RespFail(c.Writer, msg)
-//	}
-//}
+// 新建群
+func CreateCommunity(c *gin.Context) {
+	ownerId, _ := strconv.Atoi(c.Request.FormValue("ownerId"))
+	name := c.Request.FormValue("name")
+	icon := c.Request.FormValue("icon")
+	desc := c.Request.FormValue("desc")
+	community := models.Community{}
+	community.OwnerId = uint(ownerId)
+	community.Name = name
+	community.Img = icon
+	community.Desc = desc
+	code, msg := models.CreateCommunity(community)
+	if code == 0 {
+		utils.RespOK(c.Writer, code, msg)
+	} else {
+		utils.RespFail(c.Writer, msg)
+	}
+}
 
-////加入群 userId uint, comId uint
-//func JoinGroups(c *gin.Context) {
-//	userId, _ := strconv.Atoi(c.Request.FormValue("userId"))
-//	comId := c.Request.FormValue("comId")
-//
-//	//	name := c.Request.FormValue("name")
-//	data, msg := models.JoinGroup(uint(userId), comId)
-//	if data == 0 {
-//		utils.RespOK(c.Writer, data, msg)
-//	} else {
-//		utils.RespFail(c.Writer, msg)
-//	}
-//}
+// 加载群列表
+func LoadCommunity(c *gin.Context) {
+	ownerId, _ := strconv.Atoi(c.Request.FormValue("ownerId"))
+	//	name := c.Request.FormValue("name")
+	data, msg := models.LoadCommunity(uint(ownerId))
+	if len(data) != 0 {
+		utils.RespList(c.Writer, 0, data, msg)
+	} else {
+		utils.RespFail(c.Writer, msg)
+	}
+}
 
-//func FindByID(c *gin.Context) {
-//	userId, _ := strconv.Atoi(c.Request.FormValue("userId"))
-//
-//	//	name := c.Request.FormValue("name")
-//	data := models.FindByID(uint(userId))
-//	utils.RespOK(c.Writer, data, "ok")
-//}
+// 加入群 userId uint, comId uint
+func JoinGroups(c *gin.Context) {
+	userId, _ := strconv.Atoi(c.Request.FormValue("userId"))
+	comId := c.Request.FormValue("comId")
+
+	//	name := c.Request.FormValue("name")
+	data, msg := models.JoinGroup(uint(userId), comId)
+	if data == 0 {
+		utils.RespOK(c.Writer, data, msg)
+	} else {
+		utils.RespFail(c.Writer, msg)
+	}
+}
+
+func FindByID(c *gin.Context) {
+	userId, _ := strconv.Atoi(c.Request.FormValue("userId"))
+
+	//	name := c.Request.FormValue("name")
+	data := models.FindByID(uint(userId))
+	utils.RespOK(c.Writer, data, "ok")
+}

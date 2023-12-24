@@ -7,10 +7,10 @@ redis:
   poolSize: 30
   minIdleConn: 30
 oss:
-  Endpoint: "oss-cn-hangzhou.aliyuncs.com"
-  AccessKeyId: "LTAI5tNCXPJwS3MstKoKgixh"
-  AccessKeySecret: "YhHE8OyCMsqfjwOnxQ1oO7paYlDjVHX"
-  Bucket : "ginchat"
+  Endpoint: "https://oss-cn-beijing.aliyuncs.com"
+  AccessKeyId: "LTAI5tQdpsht36XJqYZevPGn"
+  AccessKeySecret: "dyThns69pEwBcGl1AjBby1YsGEyDcm"
+  Bucket : "xichen-server"
 
 timeout:
   DelayHeartbeat: 3   #延迟心跳时间  单位秒
